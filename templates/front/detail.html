@@ -1,0 +1,37 @@
+{% extends 'front/baseFront.html' %} {% load static %} {% block konten %}
+
+<div id="overviews" class="section wb">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 blog-post-single">
+        <div class="blog-item">
+          <div class="image-blog">
+            <img src="{{take.picture}}" alt="" class="img-fluid" />
+          </div>
+          <div class="post-content">
+            <div class="meta-info-blog">
+              <span
+                ><i class="fa fa-calendar"></i> <a href="#">{{take.date}}</a>
+              </span>
+              <span
+                ><i class="fa fa-tag"></i> <a href="#">{{take.penulis}}</a>
+              </span>
+            </div>
+            <div class="blog-title">
+              <h2>
+                <a href="#" title="">{{take.judul}}</a>
+              </h2>
+            </div>
+            <div class="blog-desc">{{take.konten | safe}}</div>
+          </div>
+        </div>
+      </div>
+      <!-- end col -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>
+<!-- end section -->
+
+{% endblock konten %}

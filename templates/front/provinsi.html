@@ -1,0 +1,59 @@
+{% extends 'front/baseFront.html' %} {% load static %} {% block konten %}
+<div class="all-title-box">
+  <div class="container text-center">
+    <h1>
+      List Of city Indonesia<span class="m_1">
+        List kabupaten yang ada di masing-masing provinsi Indonesia</span
+      >
+    </h1>
+  </div>
+</div>
+
+<div id="overviews" class="section lb">
+  <div class="container">
+    <div class="section-title row text-center">
+      <div class="col-md-8 offset-md-2">
+        <img
+          src="{% static 'front/images/indonesia/pulauku.gif '%}"
+          class="w-75"
+          alt=""
+        />
+        <h3>Provinsi/Kabupaten</h3>
+        <p class="lead">
+          Sesuai dengan nama provinsi yang kamu pilih, kamu akan melihat daftar
+          kabupaten atau kota apa saja yang ada didalamnya, silahkan cek tabel
+          di bawah!
+        </p>
+      </div>
+    </div>
+    <!-- end title -->
+
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>
+
+<div id="overviews" class="section wb rounded">
+  <div class="container-fluid rounded">
+    <table class="table table-striped rounded">
+      <thead class="rounded">
+        <tr class="rounded">
+          <th scope="col">No</th>
+          <th scope="col">ID</th>
+          <th scope="col" class="text-center">Nama Kabupaten</th>
+        </tr>
+      </thead>
+      <tbody class="rounded">
+        {% for d in data2 %}
+        <tr class="rounded">
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{d.id}}</td>
+          <td class="text-center">{{d.name}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock konten %}

@@ -1,0 +1,100 @@
+{% extends 'front/baseFront.html' %} {% load static %} {% block konten %}
+
+<div class="all-title-box">
+    <div class="container text-center">
+        <h1>Blog<span class="m_1">Artikel singkat tentang indonesia</span></h1>
+    </div>
+</div>
+
+<div id="overviews" class="section wb">
+    <div class="container">
+        <div class="section-title row text-center">
+            <div class="col-md-8 offset-md-2">
+                <p class="lead">Kumpulan beberapa artikel singkat</p>
+            </div>
+        </div><!-- end title -->
+
+        <hr class="invis"> 
+
+        <div class="row justify-content-center"> 
+            {% for a in artis %}
+            <div class="col-lg-4 col-md-6 col-12" style="height: 500px;">
+                <div class="blog-item" style="height: 500px;">
+                    <div class="image-blog">
+                        <img src="{{a.picture}}" alt="" class="img-fluid">
+                    </div>
+                    <div class="meta-info-blog">
+                        <span><i class="fa fa-calendar"></i> <a href="#">{{a.date}}</a> </span>
+                        <span><i class="fa fa-tag"></i>  <a href="#">{{a.penulis}}</a> </span>
+                    </div>
+                    <div class="blog-title">
+                        <h2><a href="#" title="">{{a.judul}}</a></h2>
+                    </div>
+                    <div class="blog-desc" style="
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    
+                  ">
+                        <p>{{a.konten |safe}}</p>
+                    </div>
+                    <div class="blog-button">
+                        <a class="hover-btn-new orange" href="{% url 'detail' a.id %}" ><span>Read More<span></a>
+                    </div>
+                </div>
+            </div><!-- end col -->
+            {% endfor %}
+            
+
+            
+
+          
+        </div><!-- end row -->
+        <br><br>
+        <!--
+            {{artis}}
+            <br>
+            current : {{artis.number}}
+            <br>
+            number all page : {{artis.paginator.num_pages}}
+            <br>-->
+
+            <nav aria-label="...">
+                <ul class="pagination justify-content-center">
+                  
+                
+            
+            {% if artis.has_previous %}
+                
+                <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a></li>
+                
+                <li class="page-item">
+                    <a class="page-link" href="?page={{artis.previous_page_number}}">previous</a>
+                  </li>
+                
+            
+            {% endif %}
+
+            {% for i in nums %}
+                
+            
+            <li class="page-item">
+                <a class="page-link" href="?page={{forloop.counter}}">{{forloop.counter}}</a>
+              </li>
+
+              {% endfor %}
+            {% if artis.has_next %}
+                
+                
+                <li class="page-item"><a class="page-link" href="?page={{artis.next_page_number}}">next</a></li>
+                
+                <li class="page-item"><a class="page-link" href="?page={{artis.paginator.num_pages}}">&raquo Last</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+      
+    </div><!-- end container -->
+</div><!-- end section -->
+
+{% endblock konten %}
