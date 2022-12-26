@@ -20,7 +20,7 @@ def home(request):
     
     URL2 = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    r2 = requests.get(url = URL2)
+    r2 = requests.get(url = URL2, verify=False)
     
     data2 = r2.json()
     
@@ -42,7 +42,7 @@ def aboutus(request):
     
     URL = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    r = requests.get(url = URL)
+    r = requests.get(url = URL, verify=False)
     
     data = r.json()
     
@@ -59,7 +59,7 @@ def presiden(request):
         
     URL = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    r = requests.get(url = URL)
+    r = requests.get(url = URL, verify=False)
     
     data = r.json()
     
@@ -76,7 +76,7 @@ def blog(request):
     
     URL = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    r = requests.get(url = URL)
+    r = requests.get(url = URL, verify=False)
     
     data = r.json()
     
@@ -105,7 +105,7 @@ def detailBlog(request, id):
         
     URL = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    r = requests.get(url = URL)
+    r = requests.get(url = URL, verify=False)
     
     data = r.json()
     
@@ -122,7 +122,7 @@ def provinsi(request):
         
     URL = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    r = requests.get(url = URL)
+    r = requests.get(url = URL, verify=False)
     
     data = r.json()
     
@@ -130,7 +130,7 @@ def provinsi(request):
     
     URL2 = "https://api.goapi.id/v1/regional/kota?provinsi_id={}&api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V".format(wilayah)
     
-    r2 = requests.get(url = URL2)
+    r2 = requests.get(url = URL2, verify=False)
     
     data2 = r2.json()
     
