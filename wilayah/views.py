@@ -18,14 +18,9 @@ def home(request):
     
     data = r.json()
     
-    proxies = {
-        'http': '*********',
-        'https': '*********',
-    }
-    
     URL2 = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    r2 = requests.get(url = URL2, proxies=proxies)
+    r2 = requests.get(url = URL2)
     
     data2 = r2.json()
     
@@ -47,12 +42,7 @@ def aboutus(request):
     
     URL = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    proxies = {
-        'http': '*********',
-        'https': '*********',
-    }
-    
-    r = requests.get(url = URL, proxies=proxies)
+    r = requests.get(url = URL)
     
     data = r.json()
     
@@ -66,15 +56,10 @@ def aboutus(request):
 def presiden(request):
     
     template_name = "front/presiden.html"
-    
-    proxies = {
-        'http': '*********',
-        'https': '*********',
-    }
         
     URL = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    r = requests.get(url = URL, proxies=proxies)
+    r = requests.get(url = URL)
     
     data = r.json()
     
@@ -89,14 +74,9 @@ def blog(request):
     
     template_name = "front/blog.html"
     
-    proxies = {
-        'http': '*********',
-        'https': '*********',
-    }
-    
     URL = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    r = requests.get(url = URL, proxies=proxies)
+    r = requests.get(url = URL)
     
     data = r.json()
     
@@ -122,15 +102,10 @@ def detailBlog(request, id):
     template_name = "front/detail.html"
     
     take = Artikels.objects.get(id=id)
-    
-    proxies = {
-        'http': '*********',
-        'https': '*********',
-    }
         
     URL = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    r = requests.get(url = URL, proxies=proxies)
+    r = requests.get(url = URL)
     
     data = r.json()
     
@@ -144,15 +119,10 @@ def detailBlog(request, id):
 def provinsi(request):
     
     template_name = "front/provinsi.html"
-    
-    proxies = {
-        'http': '*********',
-        'https': '*********',
-    }
         
     URL = "https://api.goapi.id/v1/regional/provinsi?api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V"
     
-    r = requests.get(url = URL, proxies=proxies)
+    r = requests.get(url = URL)
     
     data = r.json()
     
@@ -160,7 +130,7 @@ def provinsi(request):
     
     URL2 = "https://api.goapi.id/v1/regional/kota?provinsi_id={}&api_key=NCi8gCIlihiweY0d99LQAfGwA2Hr4V".format(wilayah)
     
-    r2 = requests.get(url = URL2, proxies=proxies)
+    r2 = requests.get(url = URL2)
     
     data2 = r2.json()
     
